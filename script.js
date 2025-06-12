@@ -1,3 +1,17 @@
+      window.addEventListener("load", () => {
+  const overlay = document.getElementById("overlay");
+  const closeBtn = document.getElementById("closeOverlay");
+
+  setTimeout(() => {
+    overlay.classList.add("show-overlay");
+  }, 500); // Delay the slide in a bit
+
+  closeBtn.addEventListener("click", () => {
+    overlay.style.top = "-100%";
+  });
+});
+
+      
       let centiseconds = 0,
         seconds = 0,
         minutes = 0;
@@ -68,7 +82,6 @@
         lapsDiv.innerHTML = "";
       }
 
-      // Event Listeners
       startBtn.addEventListener("click", startTimer);
       stopBtn.addEventListener("click", stopTimer);
       pauseBtn.addEventListener("click", pauseTimer);
