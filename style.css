@@ -1,111 +1,173 @@
 * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      body {
-        font-family: "Poppins", sans-serif;
-        background: linear-gradient(120deg, #1e1e2f, #2c003e);
-        color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(120deg, #1e1e2f, #2c003e);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-      .container {
-        text-align: center;
-        background: rgba(255, 255, 255, 0.05);
-        padding: 2rem;
-        border-radius: 20px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        width: 340px;
-      }
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 60px auto;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+}
 
-      h3 {
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-        color: #f3f3f3;
-      }
+h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #f3f3f3;
+}
 
-      .timer-display {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-        letter-spacing: 1px;
-      }
+.timer-display {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
 
-      .timer-display span {
-        font-weight: bold;
-        color: #ffccff;
-      }
+.timer-display span {
+  font-weight: bold;
+  color: #ffccff;
+}
 
-      h5 {
-        font-weight: 300;
-        font-size: 0.8rem;
-        margin-bottom: 1rem;
-        color: #ccc;
-      }
+h5 {
+  font-weight: 300;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+}
 
-      .button {
-        position: relative;
-        overflow: hidden;
-        height: 2.8rem;
-        padding: 0 1.5rem;
-        border-radius: 1.5rem;
-        background: #a951e4;
-        background-size: 400%;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        margin: 0.3rem;
-        transition: transform 0.2s ease-in-out;
-      }
+.button {
+  position: relative;
+  overflow: hidden;
+  height: 3.5rem;
+  padding: 0 2.5rem;
+  border-radius: 1.75rem;
+  background: #a951e4;
+  background-size: 400%;
+  font-size: 1.1rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 0.3rem;
+  transition: transform 0.2s ease-in-out;
+}
 
-      .button:hover {
-        transform: scale(1.05);
-      }
+.button:hover {
+  transform: scale(1.05);
+}
 
-      .button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: scaleX(0);
-        transform-origin: 0 50%;
-        width: 100%;
-        height: 100%;
-        border-radius: inherit;
-        background: linear-gradient(90deg, #ff00cc, #3333ff);
-        z-index: 0;
-        transition: all 0.4s ease-in-out;
-      }
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  z-index: 0;
+  transition: all 0.4s ease-in-out;
+}
 
-      .button:hover::before {
-        transform: scaleX(1);
-      }
+.button:hover::before {
+  transform: scaleX(1);
+}
 
-      .button-content {
-        position: relative;
-        z-index: 1;
-        font-weight: 500;
-      }
+.button-content {
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+}
 
-      #laps {
-        margin-top: 1rem;
-        font-size: 0.9rem;
-        color: #ffd;
-        max-height: 120px;
-        overflow-y: auto;
-        text-align: left;
-      }
+#laps {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ffd;
+  max-height: 120px;
+  overflow-y: auto;
+  text-align: left;
+}
 
-      #laps p {
-        margin: 4px 0;
-        padding: 3px 8px;
-        background: rgba(255, 255, 255, 0.05);
-        border-left: 4px solid #a951e4;
-        border-radius: 4px;
-      }
+#laps p {
+  margin: 4px 0;
+  padding: 3px 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #a951e4;
+  border-radius: 4px;
+}
+
+.overlay {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: top 1s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.overlay-content {
+  text-align: center;
+  background: rgba(20, 20, 20, 0.918);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 2s ease forwards;
+}
+
+#closeOverlay {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+  background: #a951e4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#closeOverlay:hover {
+  background: #8646ba;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.show-overlay {
+  top: 0;
+}
