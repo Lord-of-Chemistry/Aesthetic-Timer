@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aesthetic Timer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
@@ -12,36 +12,51 @@
 
       <div class="timer">
         <div class="timer-display">
-          <span id="minutes">00</span> :
-          <span id="seconds">00</span> :
+          <span id="minutes">00</span> : <span id="seconds">00</span> :
           <span id="centiseconds">00</span>
-          <h5>Minute Second Centisecond</h5>
+          
         </div>
 
-        <button class="button"><span class="button-content start">Start</span></button>
-        <button class="button"><span class="button-content stop">Stop</span></button>
-        <button class="button"><span class="button-content pause">Pause</span></button>
-        <button class="button"><span class="button-content reset">Reset</span></button>
-        <button class="button"><span class="button-content lap">Lap</span></button>
-        <button class="button"><span class="button-content clear">Clear</span></button>
+        <button class="button">
+          <span class="button-content start">Start</span>
+        </button>
+        <button class="button">
+          <span class="button-content stop">Stop</span>
+        </button>
+        <button class="button">
+          <span class="button-content pause">Pause</span>
+        </button>
+        <button class="button">
+          <span class="button-content reset">Reset</span>
+        </button>
+        <button class="button">
+          <span class="button-content lap">Lap</span>
+        </button>
+        <button class="button">
+          <span class="button-content clear">Clear</span>
+        </button>
 
         <div id="laps"></div>
       </div>
     </div>
 
     <div class="overlay" id="overlay">
-  <div class="overlay-content">
-    <h2>Welcome!</h2>
-    <br>
-      This is a timer web. <br />
-      Click <strong>Start</strong> to begin timing,<br />
-      <strong>Pause</strong> to pause, <strong>Stop</strong> to end.<br />
-      Use <strong>Lap</strong> to save time checkpoints, and </br><strong>Reset</strong> to go again.
-    </p>
-    <button id="closeOverlay">Got it!</button>
-  </div>
-</div>
+      <div class="overlay-content">
+        <h2>Welcome!</h2>
+        <p>
+          <br />
+          This is a timer web. <br />
+          Click <strong>Start</strong> to begin timing,<br />
+          <strong>Pause</strong> to pause, <strong>Stop</strong> to end.<br />
+          Use <strong>Lap</strong> to save time checkpoints, and <br /><strong
+            >Reset</strong
+          >
+          to go again.
+        </p>
+        <button id="closeOverlay">Got it!</button>
+      </div>
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
