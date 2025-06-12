@@ -30,14 +30,14 @@ body {
 }
 
 h3 {
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   font-size: 2rem;
   color: #f3f3f3;
 }
 
 .timer-display {
   font-size: 6rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   letter-spacing: 1px;
   text-align: center;
 }
@@ -45,14 +45,6 @@ h3 {
 .timer-display span {
   font-weight: bold;
   color: #ffccff;
-}
-
-h5 {
-  font-weight: 300;
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  color: #ddd;
 }
 
 .button {
@@ -168,6 +160,48 @@ h5 {
   }
 }
 
+.show-overlay {
+  top: 0;
+}
+
+@media (max-width: 1024px) {
+  .timer-display {
+    font-size: 4.5rem;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 0 2rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .timer-display {
+    font-size: 3.5rem;
+  }
+
+  .button {
+    font-size: 0.95rem;
+    padding: 0 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}
+
 @media (max-width: 600px) {
   .timer-display {
     font-size: 2.5rem;
@@ -177,9 +211,17 @@ h5 {
     font-size: 0.9rem;
     padding: 0 1.5rem;
   }
-}
+
+  h3 {
+    font-size: 1.5rem;
+  }
 
 
-.show-overlay {
-  top: 0;
+  .container {
+    padding: 0.8rem;
+  }
+
+  #laps {
+    font-size: 0.8rem;
+  }
 }
