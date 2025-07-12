@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aesthetic Timer</title>
+    <title>Noctiwave</title>
     <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   </head>
   <body>
+    <div class="all">
     <div class="container">
-      <h3>Timer & Stopwatch</h3>
+      <h3>Noctiwave</h3>
 
       <div class="timer">
         <div class="timer-display">
@@ -17,24 +19,16 @@
           
         </div>
 
-        <button class="button">
-          <span class="button-content start">Start</span>
-        </button>
-        <button class="button">
-          <span class="button-content stop">Stop</span>
-        </button>
-        <button class="button">
-          <span class="button-content pause">Pause</span>
-        </button>
-        <button class="button">
-          <span class="button-content reset">Reset</span>
-        </button>
-        <button class="button">
-          <span class="button-content lap">Lap</span>
-        </button>
-        <button class="button">
-          <span class="button-content clear">Clear</span>
-        </button>
+        <button class="button start">
+  <span class="button-content start">Start</span>
+</button>
+<button class="button reset">
+  <span class="button-content">Reset</span>
+</button>
+<button class="button lap">
+  <span class="button-content">Lap</span>
+</button>
+
 
         <div id="laps"></div>
       </div>
@@ -42,10 +36,9 @@
 
     <div class="overlay" id="overlay">
       <div class="overlay-content">
-        <h2>Heyyy!</h2>
+        <h2>Welcome!</h2>
         <p>
           <br />
-          This is a timer. <br />
           Click <strong>Start</strong> to begin timing,<br />
           <strong>Pause</strong> to pause, <strong>Stop</strong> to end.<br />
           Use <strong>Lap</strong> to save time checkpoints, and <br /><strong
@@ -56,6 +49,11 @@
         <button id="closeOverlay">Got it!</button>
       </div>
     </div>
+
+    <div class=" footer mt-6 text-xs text-purple-200">by WittySage...because time glows better after midnight ✨</div>
+  </div>
+</div>
+    
 
     <script src="script.js"></script>
   </body>
