@@ -5,8 +5,8 @@
 }
 
 :root {
-  --primary-color: #714291;
-  --accent-color: #e93ec7;
+  --primary-color: #440c69;
+  --accent-color: #9a08fc;
 }
 
 body {
@@ -22,6 +22,7 @@ body {
   height: 100vh;
   opacity: 0;
   animation: fadeIn 3s ease forwards, backgroundFlow 30s ease infinite;
+  user-select: none;
 }
 
 @keyframes fadeIn {
