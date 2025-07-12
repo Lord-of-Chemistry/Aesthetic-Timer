@@ -4,15 +4,49 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #714291;
+  --accent-color: #e93ec7;
+}
+
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(120deg, #1e1e2f, #2c003e);
+  background: var(--primary-color);
+  background-size: 400% 400%;
+  transition: background 1s ease;
+  animation: backgroundFlow 20s ease infinite;
   color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  user-select: none;
+  opacity: 0;
+  animation: fadeIn 3s ease forwards, backgroundFlow 30s ease infinite;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backgroundFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -37,7 +71,7 @@ h3 {
 }
 
 .timer-display {
-  font-size: 6rem;
+  font-size: 7rem;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
   text-align: center;
@@ -45,7 +79,25 @@ h3 {
 
 .timer-display span {
   font-weight: bold;
-  color: #ffccff;
+  color: var(--accent-color);
+  transition: color 1s ease;
+  text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+  transition: color 1s ease, text-shadow 1s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 0.2s ease;
+}
+
+
+.timer-display span.pulse {
+  animation: pulse 0.3s ease;
 }
 
 .button {
@@ -54,14 +106,14 @@ h3 {
   height: 3.5rem;
   padding: 0 2.5rem;
   border-radius: 1.75rem;
-  background: #a951e4;
+  background: var(--primary-color);
   background-size: 400%;
   font-size: 1.1rem;
   color: #fff;
   border: none;
   cursor: pointer;
   margin: 0.3rem;
-  transition: transform 0.2s ease-in-out;
+  transition: background 1.5s ease, transform 0.2s ease-in-out, color 0.5s ease;
 }
 
 .button:hover {
@@ -79,6 +131,7 @@ h3 {
   height: 100%;
   border-radius: inherit;
   background: linear-gradient(90deg, #ff00cc, #3333ff);
+  background: var(--accent-color);
   z-index: 0;
   transition: all 0.4s ease-in-out;
 }
@@ -92,6 +145,33 @@ h3 {
   z-index: 1;
   font-weight: 500;
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 #laps {
   margin-top: 1rem;
@@ -108,6 +188,7 @@ h3 {
   background: rgba(255, 255, 255, 0.05);
   border-left: 4px solid #a951e4;
   border-radius: 4px;
+  animation: fadeSlideIn 0.5s ease;
 }
 
 .overlay {
@@ -138,7 +219,7 @@ h3 {
   margin-top: 20px;
   padding: 10px 20px;
   font-weight: bold;
-  background: #a951e4;
+  background: var(--primary-color);
   color: white;
   border: none;
   border-radius: 10px;
@@ -147,7 +228,7 @@ h3 {
 }
 
 #closeOverlay:hover {
-  background: #8646ba;
+  background: var(--accent-color);
 }
 
 @keyframes fadeIn {
@@ -167,7 +248,7 @@ h3 {
 
 @media (max-width: 1024px) {
   .timer-display {
-    font-size: 4.5rem;
+    font-size: 5rem;
   }
 
   .button {
@@ -186,7 +267,7 @@ h3 {
 
 @media (max-width: 768px) {
   .timer-display {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
 
   .button {
@@ -200,12 +281,13 @@ h3 {
 
   .container {
     padding: 1rem;
+    margin:  40px;
   }
 }
 
 @media (max-width: 600px) {
   .timer-display {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .button {
